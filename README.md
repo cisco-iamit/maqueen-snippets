@@ -1,5 +1,18 @@
 # Code snippets for BBC Microbit + Maqueen
 
+## Plan
+
+1. Microbit
+2. JavaScript
+3. DFrobot (each robot has a name)
+- Make it go forward for 5 seconds
+- Make it go forward and stop if it runs into an obstacle
+- Make it go forward and avoid an obstacle by turning left/right
+- Make it follow a path
+- Radio?
+
+
+
 ## Get started
 
 You need to open a code editor on https://makecode.microbit.org and then click "New Project".
@@ -26,7 +39,7 @@ basic.forever(function () {
 
 ## Events
 
-```
+```javascript
 basic.forever(function () {
 
     input.onButtonPressed(Button.A, function () {
