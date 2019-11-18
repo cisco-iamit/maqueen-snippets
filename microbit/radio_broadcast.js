@@ -1,6 +1,6 @@
 let durationMin = 1
 let durationMax = 4
-let directions = ["L", "R", "F", "B"]
+let directions = ["L", "R", "F", "B", "S"]
 
 basic.forever(function () {
     radio.setGroup(1);
@@ -9,4 +9,5 @@ basic.forever(function () {
     basic.showString(direction);
     radio.sendString(direction);
     basic.pause(duration);
+    basic.clearScreen();
 })
