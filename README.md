@@ -1,23 +1,6 @@
 # Code snippets for BBC Microbit + Maqueen
 
-## Plan
-
-1. Microbit
-2. JavaScript
-3. DFrobot (each robot has a name)
-- Make it go forward for 5 seconds
-- Make it go forward and stop if it runs into an obstacle
-- Make it go forward and avoid an obstacle by turning left/right
-- Make it follow a path
-- Radio?
-
-
-
 ## Get started
-
-You need to open a code editor on https://makecode.microbit.org and then click "New Project".
-
-At the top, switch to JavaScript. You can always use Blocks editor to help you visualise what you are doing if you are new to JavaScript.
 
 This basic block of code allows to run your program indefinitely:
 
@@ -37,18 +20,42 @@ basic.forever(function () {
 })
 ```
 
-## Events
+## Examples with doggo
 
 ```javascript
+// these are variables
+let name = "Doggo"
+let friend = "Alex"
+
+// this is an event definition
+// function(){} is a called an anonymous function
+// it is basically a piece of code that runs when certain event fires
+input.onButtonPressed(Button.A, function () {
+    basic.showString("Woof")
+    basic.pause(3000)
+})
+
+// this is another event
+// events occur independently of your program flow
+// imagine your friend calling you unexpectedly:
+// that is an event
+input.onButtonPressed(Button.B, function () {
+    meet("Alex")
+})
+
+// this is a function that accepts an argument
+function meet(person: string) {
+    // the dog would only greet a friend
+    if (person === friend) {
+        basic.showString("Hi " + person)
+    }
+    // and it would be hostile to somebody it doesn't know
+    else {
+        basic.showString("Arggh")
+    }
+}
+
 basic.forever(function () {
-
-    input.onButtonPressed(Button.A, function () {
-        basic.showString("Hello!")
-    });
-
-    input.onButtonPressed(Button.B, function () {
-        basic.showString("Bye!")
-    });
-
+    basic.showIcon(IconNames.Happy)
 })
 ```
