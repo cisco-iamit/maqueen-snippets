@@ -1,4 +1,4 @@
 radio.setGroup(1)
-radio.onReceivedString(function (receivedString) {
+radio.onReceivedString(receivedString => {
     basic.showString(receivedString)
 })
